@@ -4,15 +4,17 @@ import React, { useEffect, useState } from 'react';
 
 const Home = () => {
     const [courses, setCourses] = useState([]);
-    console.log(courses);
+    const [course, setCourse] = useState([]);
 
     useEffect(() => {
         fetch("data.json")
             .then(res => res.json())
             .then(data => setCourses(data))
     }, []);
+    const handleSelect = (course) => {
+        console.log(course);
+    }
 
-    
     return (
         <div className='grid grid-cols-1 gap-2  lg:grid-cols-3'>
             {
@@ -26,11 +28,11 @@ const Home = () => {
                             <p className='text-base text-[#1C1B1B99]'>{course.details}</p>
                             <div className='flex flex-row gap-2'>
                                 <p className='text-base text-[#1C1B1B99]'>$ Price: {course.price}</p>
-                                
+
                                 <p className='text-base text-[#1C1B1B99]'>Credit: {course.credit}hr</p>
                             </div>
                             <div className="card-actions">
-                                <button className='bg-[#2F80ED] px-24 py-2 rounded-md text-[#FFF] font-semibold text-lg'>Select</button>
+                                <button onClick={()=>handleSelect(course)} className='bg-[#2F80ED] px-24 py-2 rounded-md text-[#FFF] font-semibold text-lg'>Select</button>
                             </div>
                         </div>
                     </div>
