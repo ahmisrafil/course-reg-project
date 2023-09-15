@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Introduction to Programming",
+        "details": "Learn the basics of programming with this introductory course.",
+        "price": 199.99,
+        "credit": 3,
+        "image": "https://i.ibb.co/VWqWs3q/prog.png",
+        "id": 1 
+    },
+    {
+        "name": "Web Development Fundamentals",
+        "details": "Get started with web development and build your first websites.",
+        "price": 249.99,
+        "credit": 4,
+        "image": "https://i.ibb.co/6gVkVB7/webf.png",
+        "id": 2
+    },
+    {
+        "name": "Data Science Essentials",
+        "details": "Explore data analysis and machine learning in this foundational course.",
+        "price": 299.99,
+        "credit": 4,
+        "image": "https://i.ibb.co/1QRZtjV/data.jpg",
+        "id": 3
+    },
+    {
+        "name": "Graphic Design Basics",
+        "details": "Learn the fundamentals of graphic design and create stunning visuals.",
+        "price": 199.99,
+        "credit": 3,
+        "image": "https://i.ibb.co/93r9TjH/gaph.jpg",
+        "id": 4
+    },
+    {
+        "name": "Digital Marketing Strategies",
+        "details": "Master digital marketing techniques to grow your online presence.",
+        "price": 249.99,
+        "credit": 4,
+        "image": "https://i.ibb.co/wMzNFzD/dig.jpg",
+        "id": 5
+    },
+    {
+        "name": "Business Finance Principles",
+        "details": "Understand the financial aspects of running a successful business.",
+        "price": 199.99,
+        "credit": 3,
+        "image": "https://i.ibb.co/sgxmRHR/buis.jpg",
+        "id": 6
+    },
+    {
+        "name": "Mobile App Development",
+        "details": "Create mobile apps for iOS and Android platforms.",
+        "price": 299.99,
+        "credit": 4,
+        "image": "https://i.ibb.co/Czqzbyf/app.jpg",
+        "id": 7
+    },
+    {
+        "name": "Artificial Intelligence Fundamentals",
+        "details": "Dive into the world of AI and machine learning.",
+        "price": 349.99,
+        "credit": 5,
+        "image": "https://i.ibb.co/021fgG6/arti.jpg",
+        "id": 8
+    },
+    {
+        "name": "Creative Writing Workshop",
+        "details": "Unleash your creativity with this hands-on writing course.",
+        "price": 199.99,
+        "credit": 3,
+        "image": "https://i.ibb.co/yY4F3tg/cont.png",
+        "id": 9
+    }
+]
