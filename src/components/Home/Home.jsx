@@ -2,6 +2,9 @@
 import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Home = () => {
     const [courses, setCourses] = useState([]);
@@ -24,8 +27,13 @@ const Home = () => {
         let credit = course.credit;
         let price = course.price;
 
+        
+
+
+
+
         if (isExist) {
-            return alert("already selected the course");
+            return notifyCourse();
         }
         else {
             selectedCourses.forEach((course) => {
@@ -33,7 +41,7 @@ const Home = () => {
                 price = price + course.price;
             });
             if (credit > 20) {
-                return alert("You can not exceed your credit limit");
+                return notifyCredit();
             }
             else {
                 setTotalCredit(credit);
@@ -47,10 +55,36 @@ const Home = () => {
         }
     }
 
+    const notifyCourse = () =>{
+        toast.error('Course has already taken !', {
+            position: "top-center",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });    
+    };
+    const notifyCredit = () =>{
+        toast.error('You can not exceed your credit limit', {
+            position: "top-center",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });    
+    };
+
     return (
         <div className='flex flex-row gap-4'>
             <div className='grid grid-cols-1 gap-2  lg:grid-cols-3'>
                 {
+                    
                     courses.map(course => (
                         <div key={course.id} className="card w-96 bg-base-100 shadow-xl">
                             <figure className="px-10 pt-10">
@@ -66,6 +100,7 @@ const Home = () => {
                                 </div>
                                 <div className="card-actions">
                                     <button onClick={() => handleSelect(course)} className='bg-[#2F80ED] px-24 py-2 rounded-md text-[#FFF] font-semibold text-lg'>Select</button>
+                                    <ToastContainer />
                                 </div>
                             </div>
                         </div>
