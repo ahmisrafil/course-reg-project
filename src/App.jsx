@@ -13,7 +13,6 @@ function App() {
       <div className='flex flex-col md:flex-row gap-4'>
 
         <Home></Home>
-        <Cart></Cart>
       </div>
     </>
   )

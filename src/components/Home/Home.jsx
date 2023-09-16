@@ -1,10 +1,13 @@
 /* eslint-disable react/no-unknown-property */
 import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
 
 const Home = () => {
     const [courses, setCourses] = useState([]);
-    const [course, setCourse] = useState([]);
+    const [selectedCourses, setSelectedCourses] = useState([]);
+
+
 
     useEffect(() => {
         fetch("data.json")
@@ -12,11 +15,12 @@ const Home = () => {
             .then(data => setCourses(data))
     }, []);
     const handleSelect = (course) => {
-        console.log(course);
+        setSelectedCourses([...selectedCourses, course]);
     }
 
     return (
-        <div className='grid grid-cols-1 gap-2  lg:grid-cols-3'>
+        <div className='flex flex-row gap-4'>
+            <div className='grid grid-cols-1 gap-2  lg:grid-cols-3'>
             {
                 courses.map(course => (
                     <div key={course.id} className="card w-96 bg-base-100 shadow-xl">
@@ -38,6 +42,8 @@ const Home = () => {
                     </div>
                 ))
             }
+            </div>
+            <Cart selectedCourses={selectedCourses}></Cart>
         </div>
     );
 };
